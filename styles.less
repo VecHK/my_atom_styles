@@ -1,0 +1,155 @@
+/*
+ * Your Stylesheet
+ *
+ * This stylesheet is loaded when Atom starts up and is reloaded automatically
+ * when it is changed and saved.
+ *
+ * Add your own CSS or Less to fully customize Atom.
+ * If you are unfamiliar with Less, you can read more about it here:
+ * http://lesscss.org
+ */
+
+
+/*
+ * Examples
+ * (To see them, uncomment and save)
+ */
+
+/*---------------------------------- custom ----------------------------------*/
+
+// 设置页面
+.settings-view {
+  // 左侧栏和右侧面板区
+  .config-menu, .panels {
+    background-color: hsl(231, 14%, 18%);
+  }
+}
+
+.tree-view {
+  background-color: hsl(231, 12%, 15%);
+}
+
+// 无标签时代码区位置
+.item-views {
+  background-color: hsl(231, 12%, 15%);
+}
+
+// 代码树滚动条
+.scrollbars-visible-always ::-webkit-scrollbar-thumb {
+  border: 3px solid hsl(231, 12%, 15%);
+}
+// 代码树滚动条
+.scrollbars-visible-always ::-webkit-scrollbar-track {
+  background: hsl(231, 12%, 15%);
+}
+
+.gutter-container {
+  // 行号栏
+  .line-numbers {
+    background-color: hsl(231, 13%, 19%);
+
+    // 被折叠行的行号
+    .line-number.folded {
+      text-shadow: 0px 0px 12px hsl(240, 15%, 90%);
+    }
+    // 行号
+    .line-number {
+      color: hsl(240, 15%, 38.2%);
+      transition: color 182ms, text-shadow 182ms;
+    }
+    // 被选中行的行号
+    .line-number.cursor-line {
+      color: hsl(240, 15%, 90%);
+    }
+    // git modified 的行号
+    .line-number.git-line-modified {
+      color: hsl(40, 100%, 80%);
+      border-left-color: hsl(40, 100%, 80%);
+    }
+    // git modified 的行号作为当前行时
+    .line-number.git-line-modified.cursor-line {
+      color: hsl(240, 15%, 90%);
+      // border-left-color: red;
+    }
+    .line-number.git-line-modified.cursor-line-no-selection {
+      color: hsl(40, 70%, 100%);
+      // border-left-color: hsl(40, 70%, 100%);
+    }
+
+    // git added 的行号作为当前行时
+    .line-number.git-line-added.cursor-line {
+      color: hsl(240, 15%, 90%);
+      // border-left-color: red;
+    }
+    .line-number.git-line-added.cursor-line-no-selection {
+      color: hsl(92, 27%, 100%);
+      // border-left-color: hsl(92, 27%, 100%);
+    }
+  }
+  .gutter {
+    background-color: hsl(231, 14%, 18%);
+  }
+}
+
+// 代码编辑区
+atom-text-editor {
+  // background-color: hsl(219, 16%, 18%);
+  background-color: hsl(231, 14%, 18%);
+
+  // 滚动条
+  ::-webkit-scrollbar-thumb {
+    border: 3px solid hsl(231, 15%, 19%) !important;
+  }
+  // 滚动条
+  ::-webkit-scrollbar-track {
+    background: hsl(231, 15%, 19%) !important;
+  }
+
+  // 代码行列表区
+  .lines {
+    // 光标层
+    .cursors {
+      // 光标
+      .cursor {
+        transition: opacity 182ms;
+      }
+    }
+
+    // 代码区行
+    .line {
+      transition: background-color 150ms;
+
+      .indent-guide {
+        box-shadow: inset 1px 0 hsl(220, 16%, 22%);
+      }
+    }
+  }
+
+  // 折行线
+  .wrap-guide {
+    background-color: hsl(220, 16%, 25%);
+  }
+}
+
+/*---------------------------------- custom ----------------------------------*/
+
+
+// style the background color of the tree view
+.tree-view {
+  // background-color: whitesmoke;
+}
+// style the background and foreground colors on the atom-text-editor-element itself
+atom-text-editor {
+  // color: grey;
+  // background-color: hsl(180, 24%, 12%);
+  text-rendering: optimizeLegibility;
+}
+atom-text-editor.editor .syntax--string.syntax--quoted,
+atom-text-editor.editor .syntax--string.syntax--regexp {
+  -webkit-font-feature-settings: "liga" off, "calt" off;
+}
+
+// style UI elements inside atom-text-editor
+atom-text-editor .cursor {
+  // border-color: red;
+}
